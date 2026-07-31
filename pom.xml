@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.2</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.paicbd.smsc</groupId>
+    <artifactId>smpp-server-module</artifactId>
+    <version>3.2.0-SNAPSHOT</version>
+    <name>smpp-server-module</name>
+    <description>Demo project for Spring Boot</description>
+    <licenses>
+        <license>
+            <name>GNU Affero General Public License</name>
+            <url>http://www.gnu.org/licenses/agpl-3.0.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Enmanuel Calero</name>
+            <email>enmanuel.calero@paicbd.com</email>
+            <organization>PAiC BD</organization>
+            <organizationUrl>https://paic-bd.com/</organizationUrl>
+            <timezone>-6</timezone>
+        </developer>
+        <developer>
+            <name>Obed Navarrete</name>
+            <email>obed.navarrete@paicbd.com</email>
+            <organization>PAiC BD</organization>
+            <organizationUrl>https://paicbd.com</organizationUrl>
+            <timezone>-6</timezone>
+        </developer>
+        <developer>
+            <name>Melvin Mendoza</name>
+            <email>melvin.mendoza@paicbd.com</email>
+            <organization>PAiC BD</organization>
+            <organizationUrl>https://paic-bd.com/</organizationUrl>
+            <timezone>-6</timezone>
+        </developer>
+        <developer>
+            <name>Jose Aguirre</name>
+            <email>jose.aguirre@paicbd.com</email>
+            <organization>PAiC BD</organization>
+            <organizationUrl>https://paic-bd.com/</organizationUrl>
+            <timezone>-6</timezone>
+        </developer>
+        <developer>
+            <name>Roberto Calero</name>
+            <email>roberto.calero@paicbd.com</email>
+            <organization>PAiC BD</organization>
+            <organizationUrl>https://paic-bd.com/</organizationUrl>
+            <timezone>-6</timezone>
+        </developer>
+    </developers>
+    <properties>
+        <!-- Java version -->
+        <java.version>21</java.version>
+        <!-- Dependency versions -->
+        <jsmpp.version>3.1.5</jsmpp.version>
+        <smsc-utils.version>3.1.0-88</smsc-utils.version>
+        <mockito.version>5.12.0</mockito.version>
+        <junit.jupiter.version>5.10.3</junit.jupiter.version>
+        <mockito-inline.version>5.2.0</mockito-inline.version>
+
+        <!-- Plugin versions -->
+        <codehaus.version>2.17.1</codehaus.version>
+        <surfire.plugin.version>3.3.1</surfire.plugin.version>
+        <sonar.scanner.version>4.0.0.4121</sonar.scanner.version>
+        <caffeine.version>3.2.3</caffeine.version>
+        <jacoco.version>0.8.12</jacoco.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>${caffeine.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsmpp</groupId>
+            <artifactId>jsmpp</artifactId>
+            <version>${jsmpp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.paicbd</groupId>
+            <artifactId>smsc-utils</artifactId>
+            <version>${smsc-utils.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.3.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-inline -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <version>${mockito-inline.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${codehaus.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>set</goal>
+                            <goal>commit</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surfire.plugin.version}</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>${sonar.scanner.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
